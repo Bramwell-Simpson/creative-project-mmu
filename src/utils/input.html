@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phaser Textbox</title>
+    <style>
+        .textbox-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .textbox {
+            width: 80%;
+            height: 90%;
+            background-color: #333333;
+            color: #ffffff;
+            border: none;
+            outline: none;
+            resize: none;
+            font-family: Arial, sans-serif;
+            font-size: 30px;
+        }
+
+        .submit-button {
+            width: 80%;
+            padding: 20px;
+            border: none;
+            background-color: white;
+            color: #333333;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="textbox-container">
+        <textarea class="textbox" name="textEntry" id="textEntry" rows="13" cols="25"></textarea>
+        <button class="submit-button" id="submit" name="Submit">Submit Command</button>
+    </div>
+</body>
+</html>
