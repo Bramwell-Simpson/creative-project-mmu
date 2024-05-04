@@ -4,14 +4,13 @@ import Player from "../player";
 import CoinManager from "../managers/coinManager";
 import ScoreManager from "../managers/scoreManager";
 import ScoreLabel from "../score";
-import Level02Scene from "./Level02Scene";
+import Tip from "../tip";
 
 export default class Level01Scene extends Phaser.Scene
 {
     constructor()
     {
         super('level-01');
-        //Phaser.Scene.call(this, {"key": "level-01"});
     }
 
     preload() 
@@ -31,7 +30,7 @@ export default class Level01Scene extends Phaser.Scene
         this.coinManager = undefined;
     }
 
-    create() 
+    create()    
     {
         this.map = this.make.tilemap({ key: 'map', tileWidth: 32, tileHeight: 32 });
         const tileset = this.map.addTilesetImage('tiles', null, 32, 32, 0, 2);
@@ -46,7 +45,7 @@ export default class Level01Scene extends Phaser.Scene
 
         this.coins = this.coinManager.createCoins(this.scene.scene, this.map);
 
-        const scoreLabel = new ScoreLabel(this, 50, 50, 0, {fontSize: "32px", fill: "#fff"})
+        const scoreLabel = new ScoreLabel(this, 0, 0, 0, {fontSize: "32px", fill: "#fff"})
         this.scoreManager = new ScoreManager(scoreLabel, 0)
 
         this.scoreManager.setScore(0);
@@ -62,6 +61,8 @@ export default class Level01Scene extends Phaser.Scene
         var commandEntry = document.getElementById("textEntry");
         let submitButton = document.getElementById("submit");
 
+        const tipText = new Tip(this, 0, 540, "?", {fontSize: "32px", fill: "#fff"})
+
         commandEntry.addEventListener("click", () => {
             commandEntry.focus();
         });
@@ -76,13 +77,11 @@ export default class Level01Scene extends Phaser.Scene
                 console.log(commands);
             }
             else {
-                console.error("the hell");
+                console.error("Text Area not found");
             }
 
             this.player.executeCommands(input.split("\n"));
-
         })
-        
     }
 
     update()
@@ -95,9 +94,6 @@ export default class Level01Scene extends Phaser.Scene
 
     changeScene()
     {
-        console.log("event received")
-        //console.log("Scene:" + this.scene.getIndex('level-02'));
-        //this.scene.start('level-02')
         this.time.addEvent({
             delay: 5000, // Delay in milliseconds (5 seconds)
             callback: () => {
