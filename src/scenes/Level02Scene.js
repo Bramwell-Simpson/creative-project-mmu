@@ -10,8 +10,6 @@ export default class Level02Scene extends Phaser.Scene
     constructor()
     {
         super({ key: 'level-02' });
-        //Phaser.Scene.call(this, {"key": "level-02"});
-
     }
 
     preload() 
@@ -48,7 +46,7 @@ export default class Level02Scene extends Phaser.Scene
         //player.setPosition(448, 48);
 
 
-        const scoreLabel = new ScoreLabel(this, 50, 50, 0, {fontSize: "32px", fill: "#fff"})
+        const scoreLabel = new ScoreLabel(this, 0, 0, 0, {fontSize: "32px", fill: "#fff"})
         this.scoreManager = new ScoreManager(scoreLabel, 0)
 
         this.scoreManager.setScore(0);
