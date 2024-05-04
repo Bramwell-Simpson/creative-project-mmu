@@ -36,7 +36,7 @@ export default class Player extends Phaser.GameObjects.Image
             // Check if the target position is on an unwalkable tile
             if (this.checkCollision(targetX, targetY, mapLayer)) {
                 // Collision detected, prevent player movement
-                const blockedText = this.scene.add.text(50, 400, "Blocked!", {fontSize: "32px", color: "#f00"})
+                const blockedText = this.scene.add.text(0, 50, "Blocked!", {fontSize: "32px", color: "#f00"})
                 this.scene.time.addEvent({
                     delay: 5000,
                     callback: () => {
@@ -58,14 +58,20 @@ export default class Player extends Phaser.GameObjects.Image
             if (this.x === coin.x && this.y === coin.y)
             {
                 this.scores.add(10);
+                const coinCollectedText = this.scene.add.text(0, 50, "Coin collected!", {fontSize: "32px", color: "#008000"})
+                this.scene.time.addEvent({
+                    delay: 5000,
+                    callback: () => {
+                        coinCollectedText.destroy();
+                    }
+                })
                 coin.destroy();
             }
         });
 
         if(this.scores.score === 30)
         {
-
-            this.scene.add.text((this.scene.cameras.main.centerX), (this.scene.cameras.main.centerY), "Level Complete!", {fontSize: "32px", color: "#fff"});
+            this.scene.add.text(0, 50, "Level Complete!", {fontSize: "32px", color: "#008000"});
         }
     }
     
