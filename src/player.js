@@ -9,7 +9,7 @@ const moveDelay = 250; //ms
 export default class Player extends Phaser.GameObjects.Image
 {
 
-    constructor(scene, x, y, texture, layer, coins, scoreManager)
+    constructor(scene, x, y, texture, layer, coins, scoreManager, isTutorial)
     {
         super(scene, x , y, texture);
 
@@ -20,6 +20,7 @@ export default class Player extends Phaser.GameObjects.Image
 
         this.coins = coins;
         this.scores = scoreManager;
+        this.isTutorial = isTutorial;
     }
 
     move(direction, distance) {
@@ -36,7 +37,7 @@ export default class Player extends Phaser.GameObjects.Image
             // Check if the target position is on an unwalkable tile
             if (this.checkCollision(targetX, targetY, mapLayer)) {
                 // Collision detected, prevent player movement
-                const blockedText = this.scene.add.text(0, 50, "Blocked!", {fontSize: "32px", color: "#f00"})
+                const blockedText = this.scene.add.text(0, 100, "Blocked!", {fontSize: "32px", color: "#f00"})
                 this.scene.time.addEvent({
                     delay: 5000,
                     callback: () => {
@@ -69,7 +70,7 @@ export default class Player extends Phaser.GameObjects.Image
             }
         });
 
-        if(this.scores.score === 30)
+        if(this.scores.score === 30 && this.isTutorial === false)
         {
             this.scene.add.text(0, 100, "Level Complete!", {fontSize: "32px", color: "#008000"});
         }
