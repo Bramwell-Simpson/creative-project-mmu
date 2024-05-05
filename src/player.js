@@ -71,7 +71,7 @@ export default class Player extends Phaser.GameObjects.Image
 
         if(this.scores.score === 30)
         {
-            this.scene.add.text(0, 50, "Level Complete!", {fontSize: "32px", color: "#008000"});
+            this.scene.add.text(0, 100, "Level Complete!", {fontSize: "32px", color: "#008000"});
         }
     }
     
