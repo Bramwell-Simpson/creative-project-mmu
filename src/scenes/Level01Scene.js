@@ -18,7 +18,7 @@ export default class Level01Scene extends Phaser.Scene
         this.load.image('tiles', '../assets/tilemaps/tiles/drawtiles-spacedV2.png');
         this.load.image('car', '../assets/sprites/player.png');
         this.load.image('coin', "../assets/sprites/coin.png");
-        this.load.tilemapCSV('map', '../assets/tilemaps/level01.csv');
+        this.load.tilemapCSV('map', '../assets/tilemaps/level02.csv');
         this.load.html("textbox", "./src/utils/input.html");
 
         this.player = undefined;
