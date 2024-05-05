@@ -27,8 +27,6 @@ export default class Level02Scene extends Phaser.Scene
         this.load.image('coin', "../assets/sprites/coin.png");
         this.load.tilemapCSV('map02', '../assets/tilemaps/level02.csv');
         this.load.html("textbox", "./src/utils/input.html");
-
-        console.log("SCENE O2 WTAF")
     }
 
     create() 
@@ -51,7 +49,7 @@ export default class Level02Scene extends Phaser.Scene
 
         this.scoreManager.setScore(0);
 
-        this.player = new Player(this, 32 + 16, 32 + 16, 'car', layer, this.coins, this.scoreManager);
+        this.player = new Player(this, 32 + 16, 32 + 16, 'car', layer, this.coins, this.scoreManager, false);
         this.player.setPosition(448, 48)
 
         let inputBox = this.add.graphics();

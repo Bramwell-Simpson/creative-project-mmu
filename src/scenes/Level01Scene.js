@@ -50,7 +50,7 @@ export default class Level01Scene extends Phaser.Scene
 
         this.scoreManager.setScore(0);
 
-        this.player = new Player(this, 32 + 16, 32 + 16, 'car', layer, this.coins, this.scoreManager);
+        this.player = new Player(this, 32 + 16, 32 + 16, 'car', layer, this.coins, this.scoreManager, false);
         this.player.setPosition(448, 48)
 
         let inputBox = this.add.graphics();
