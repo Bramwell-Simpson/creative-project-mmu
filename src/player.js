@@ -34,9 +34,8 @@ export default class Player extends Phaser.GameObjects.Image
             const targetX = this.x + stepX * tileSize;
             const targetY = this.y + stepY * tileSize;
     
-            // Check if the target position is on an unwalkable tile
+            // Check if the current target position is on an unwalkable tile
             if (this.checkCollision(targetX, targetY, mapLayer)) {
-                // Collision detected, prevent player movement
                 const blockedText = this.scene.add.text(0, 100, "Blocked!", {fontSize: "32px", color: "#f00"})
                 this.scene.time.addEvent({
                     delay: 5000,
