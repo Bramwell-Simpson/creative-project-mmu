@@ -38,9 +38,9 @@ export default class TutorialLevel02 extends Phaser.Scene
     tutorialText()
     {
         const message01 = "Great job on completing the first level! \nNow let's dive deeper into how functions work.\n\nIn programming, a function is a block of reusable code \nthat performs a specific task.\nThink of it as a recipe: you give it some inputs, \nit does something with them, and then it gives you an output.\n\nIn our game, we have another function called collect().\nThis function allows the square to pick up coins\nscattered throughout the maze.\n\nTo use the collect() function simply type collect() \nwhen you're on a tile with a coin. \nThe square will automatically collect the coin\n\nNow, let's practice using both the move() and collect()\nfunctions to navigate the square through\nthe maze and collect coins along the way!"
-        const tutorialText = this.add.text(200, 0, message01, {fontSize: "30px", color: "#fff"})
+        const tutorialText = this.add.text(250, 0, message01, {fontSize: "30px", color: "#fff"})
 
-        tutorialText.setAlign("left");
+        tutorialText.setAlign("center");
 
         const startText = this.add.text(650, 550, "Start tutorial >", {fontSize: "32px", color: "#fff"}).setAlign("center").setInteractive()
 
