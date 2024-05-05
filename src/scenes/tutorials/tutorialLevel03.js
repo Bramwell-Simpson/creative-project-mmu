@@ -60,10 +60,12 @@ export default class TutorialLevel03 extends Phaser.Scene
 
         let matcher = new CommandMatcher();
         this.coinManager = new CoinManager();
+        this.coins = this.coinManager.createCoins(this, this.map)
 
-        //Hide Score as not required
-        const scoreLabel = new ScoreLabel(this, 0, 0, 0, {fontSize: "32px", fill: "#fff"}).setVisible(false);
+        const scoreLabel = new ScoreLabel(this, 0, 0, 0, {fontSize: "32px", fill: "#fff"})
         this.scoreManager = new ScoreManager(scoreLabel, 0)
+
+        this.scoreManager.setScore(0);
 
         this.player = new Player(this, 32 + 16, 32 + 16, 'car', layer, this.coins, this.scoreManager, true);
         this.player.setPosition(608, 304)
