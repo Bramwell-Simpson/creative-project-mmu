@@ -58,8 +58,7 @@ export default class TutorialLevel02 extends Phaser.Scene
         this.map = this.make.tilemap({ key: 'tutMap02', tileWidth: 32, tileHeight: 32 });
         const tileset = this.map.addTilesetImage('tiles', null, 32, 32, 0, 2);
         const layer = this.map.createLayer(0, tileset, 400, 0);
-
-        let matcher = new CommandMatcher();
+        
         this.coinManager = new CoinManager();
         this.coins = this.coinManager.createCoins(this, this.map)
 

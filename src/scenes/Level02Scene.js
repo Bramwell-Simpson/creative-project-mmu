@@ -35,7 +35,6 @@ export default class Level02Scene extends Phaser.Scene
         const tileset = this.map.addTilesetImage('tiles', null, 32, 32, 0, 2);
         const layer = this.map.createLayer(0, tileset, 400, 0);
 
-        let matcher = new CommandMatcher();
         this.coinManager = new CoinManager();
 
         this.coins = this.coinManager.createCoins(this.scene.scene, this.map);

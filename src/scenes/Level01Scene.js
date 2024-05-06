@@ -32,22 +32,24 @@ export default class Level01Scene extends Phaser.Scene
 
     create()    
     {
+        //Map setup
         this.map = this.make.tilemap({ key: 'map', tileWidth: 32, tileHeight: 32 });
         const tileset = this.map.addTilesetImage('tiles', null, 32, 32, 0, 2);
         const layer = this.map.createLayer(0, tileset, 400, 0);
 
+        //Event emitter for when level is complete
         this.emitter = new Phaser.Events.EventEmitter();
-
         this.emitter.on('changeScene', this.changeScene, this);
 
+        
         let matcher = new CommandMatcher();
+        
+        //Coin manager setup and coin creation
         this.coinManager = new CoinManager();
-
         this.coins = this.coinManager.createCoins(this.scene.scene, this.map);
 
         const scoreLabel = new ScoreLabel(this, 0, 0, 0, {fontSize: "32px", fill: "#fff"})
         this.scoreManager = new ScoreManager(scoreLabel, 0)
-
         this.scoreManager.setScore(0);
 
         this.player = new Player(this, 32 + 16, 32 + 16, 'player', layer, this.coins, this.scoreManager, false);

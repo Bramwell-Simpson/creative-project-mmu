@@ -109,8 +109,6 @@ export default class Player extends Phaser.GameObjects.Image
                     this.collectCoin()
                 }
 
-    
-                // Increment the current command index
                 currentIndex++;
     
                 // Schedule the next command execution with a delay
@@ -122,7 +120,6 @@ export default class Player extends Phaser.GameObjects.Image
             }
         };
     
-        // Start executing the commands
         executeNextCommand();
     }
     
