@@ -35,7 +35,8 @@ export default class Player extends Phaser.GameObjects.Image
             const targetY = this.y + stepY * tileSize;
     
             // Check if the current target position is on an unwalkable tile
-            if (this.checkCollision(targetX, targetY, mapLayer)) {
+            if (this.checkCollision(targetX, targetY, mapLayer)) 
+            {
                 const blockedText = this.scene.add.text(0, 100, "Blocked!", {fontSize: "32px", color: "#f00"})
                 this.scene.time.addEvent({
                     delay: 5000,
@@ -75,31 +76,31 @@ export default class Player extends Phaser.GameObjects.Image
         }
     }
     
-    checkCollision(tileX, tileY, layer) {
+    checkCollision(tileX, tileY, layer) 
+    {
         let tile = layer.getTileAtWorldXY(tileX, tileY, true);
 
         // Check if the target tile is unwalkable
         return tile.index === 2; 
     }
 
-    executeCommands(input) {
-        // Variable to keep track of the current command index
+    executeCommands(input) 
+    {
         let currentIndex = 0;
     
-        // Define a recursive function to execute the commands
         const executeNextCommand = () => {
-            // Check if there are more commands to execute
-            if (currentIndex < input.length) {
+            if (currentIndex < input.length) 
+            {
                 // Execute the current command
                 let currentCommand = this.commandChecker.checkInput(input[currentIndex]);
-                if (currentCommand === null) {
+                if (currentCommand === null) 
+                {
                     // If the current command is invalid, skip to the next one
                     currentIndex++;
                     executeNextCommand();
                     return;
                 }
-    
-                // Execute the current command after a delay
+
                 if(currentCommand[0] === "move")
                 {
                     this.move(currentCommand[1], currentCommand[2]);
