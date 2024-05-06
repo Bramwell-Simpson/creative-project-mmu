@@ -1,5 +1,5 @@
-# Phaser 3 + Vite.js Template
-> Make Phaser 3 games with modern frontend tooling.
+# Creative Project
+> Learning to program through video games
 
 ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -10,6 +10,8 @@ You'll need [Node.js](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) 
 It is highly recommended to use [Node Version Manager](https://github.com/nvm-sh/nvm) (nvm) to install Node.js and npm.
 
 For Windows users there is [Node Version Manager for Windows](https://github.com/coreybutler/nvm-windows).
+
+[Git](https://git-scm.com/) is useful for cloning this repo locally, however this repo can be downloaded as a ZIP, then extracted.
 
 Install Node.js and `npm` with `nvm`:
 
@@ -23,11 +25,11 @@ Replace 'node' with 'latest' for `nvm-windows`.
 
 ## Getting Started
 
-You can clone this repository or use [degit](https://github.com/Rich-Harris/degit) to scaffold the project like this:
+You can clone this repository to scaffold the project like this:
 
 ```bash
-npx degit https://github.com/ourcade/phaser3-vite-template my-folder-name
-cd my-folder-name
+git clone https://github.com/Bramwell-Simpson/creative-project-mmu.git 21351561-creative-project
+cd 21351561-creative-project
 
 npm install
 ```
@@ -38,13 +40,7 @@ Start development server:
 npm run start
 ```
 
-To create a production build:
-
-```
-npm run build
-```
-
-Production files will be placed in the `dist` folder. Then upload those files to a web server. 🎉
+This will run a local server where the game will function correctly.
 
 ## Project Structure
 
