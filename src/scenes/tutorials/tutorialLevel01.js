@@ -15,7 +15,7 @@ export default class TutorialLevel01 extends Phaser.Scene
     preload() 
     {
         this.load.image('tiles', '../../assets/tilemaps/tiles/drawtiles-spacedV2.png');
-        this.load.image('car', '../../assets/sprites/player.png');
+        this.load.image('player', '../../assets/sprites/player.png');
         this.load.image('coin', "../../assets/sprites/coin.png");
         this.load.tilemapCSV('tutMap01', '../../assets/tilemaps/tutorials/tutorialLevel01.csv');
         this.load.html("textbox", "../.././src/utils/input.html");
@@ -65,7 +65,7 @@ export default class TutorialLevel01 extends Phaser.Scene
         const scoreLabel = new ScoreLabel(this, 0, 0, 0, {fontSize: "32px", fill: "#fff"}).setVisible(false);
         this.scoreManager = new ScoreManager(scoreLabel, 0)
 
-        this.player = new Player(this, 32 + 16, 32 + 16, 'car', layer, this.coins, this.scoreManager, true);
+        this.player = new Player(this, 32 + 16, 32 + 16, 'player', layer, this.coins, this.scoreManager, true);
         this.player.setPosition(608, 304)
 
         let inputBox = this.add.graphics();

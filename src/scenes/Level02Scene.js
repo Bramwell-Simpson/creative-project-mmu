@@ -23,7 +23,7 @@ export default class Level02Scene extends Phaser.Scene
         this.coinManager = undefined;
 
         this.load.image('tiles', '../assets/tilemaps/tiles/drawtiles-spacedV2.png');
-        this.load.image('car', '../assets/sprites/player.png');
+        this.load.image('player', '../assets/sprites/player.png');
         this.load.image('coin', "../assets/sprites/coin.png");
         this.load.tilemapCSV('map02', '../assets/tilemaps/level01.csv');
         this.load.html("textbox", "./src/utils/input.html");
@@ -40,16 +40,12 @@ export default class Level02Scene extends Phaser.Scene
 
         this.coins = this.coinManager.createCoins(this.scene.scene, this.map);
 
-        //const player = this.add.image(32 + 16, 32 + 16, 'car');
-        //player.setPosition(448, 48);
-
-
         const scoreLabel = new ScoreLabel(this, 0, 0, 0, {fontSize: "32px", fill: "#fff"})
         this.scoreManager = new ScoreManager(scoreLabel, 0)
 
         this.scoreManager.setScore(0);
 
-        this.player = new Player(this, 32 + 16, 32 + 16, 'car', layer, this.coins, this.scoreManager, false);
+        this.player = new Player(this, 32 + 16, 32 + 16, 'player', layer, this.coins, this.scoreManager, false);
         this.player.setPosition(448, 48)
 
         let inputBox = this.add.graphics();
