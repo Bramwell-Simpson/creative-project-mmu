@@ -28,8 +28,8 @@ Replace 'node' with 'latest' for `nvm-windows`.
 You can clone this repository to scaffold the project like this:
 
 ```bash
-git clone https://github.com/Bramwell-Simpson/creative-project-mmu.git 21351561-creative-project
-cd 21351561-creative-project
+git clone https://github.com/Bramwell-Simpson/creative-project-mmu.git simpson_bramwell_creativePiece
+cd simpson_bramwell_creativePiece
 
 npm install
 ```
